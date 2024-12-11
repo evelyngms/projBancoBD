@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema Bancário!</h1>
+    <p>Escolha uma operação:</p>
+    <ul>
+        <li><a href="{% url 'criar_conta' %}">Criar Conta</a></li>
+        <li><a href="{% url 'consulta_conta' 1 %}">Consultar Saldo</a></li>  <!-- Substitua o número da conta conforme necessário -->
+    </ul>
+</body>
+</html>

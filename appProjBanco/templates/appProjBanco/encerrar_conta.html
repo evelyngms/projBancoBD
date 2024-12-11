@@ -1,0 +1,11 @@
+<h1>Encerrar Conta</h1>
+<p>Deseja encerrar a conta <strong>{{ conta.numero_conta }}</strong>? Esta operação não pode ser revertida.</p>
+
+{% if conta.saldo == 0 %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Encerramento</button>
+    </form>
+{% else %}
+    <p>Não é possível encerrar a conta enquanto o saldo não for zerado.</p>
+{% endif %}

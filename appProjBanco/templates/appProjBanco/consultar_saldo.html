@@ -1,0 +1,15 @@
+<h1>Consultar Saldo</h1>
+
+<p><strong>Nome:</strong> {{ conta.nome_titular }}</p>
+<p><strong>Número da Conta:</strong> {{ conta.numero_conta }}</p>
+<p><strong>Saldo Atual:</strong> R$ {{ conta.saldo }}</p>
+
+<a href="{% url 'depositar' conta.numero_conta %}">Depósito</a> | 
+<a href="{% url 'sacar' conta.numero_conta %}">Saque</a>
+
+{% if conta.saldo == 0 %}
+    <br><br>
+    <a href="{% url 'encerrar_conta' conta.numero_conta %}">
+        <button>Encerrar Conta</button>
+    </a>
+{% endif %}

@@ -1,0 +1,21 @@
+<h1>Criar Conta Bancária</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="nome">Nome do Titular:</label>
+    <input type="text" name="nome" id="nome" required><br><br>
+
+    <label for="numero_conta">Número da Conta:</label>
+    <input type="text" name="numero_conta" id="numero_conta" required><br><br>
+
+    <label for="senha">Senha (4 dígitos):</label>
+    <input type="password" name="senha" id="senha" required><br><br>
+
+    <label for="saldo_inicial">Saldo Inicial:</label>
+    <input type="number" name="saldo_inicial" id="saldo_inicial" step="0.01" required><br><br>
+
+    <button type="submit">Criar Conta</button>
+</form>
+
+{% if erro %}
+    <p style="color: red;">{{ erro }}</p>
+{% endif %}

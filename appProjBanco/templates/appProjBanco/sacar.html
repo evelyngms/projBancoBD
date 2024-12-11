@@ -1,0 +1,12 @@
+<h1>Saque</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="valor">Valor a Sacar:</label>
+    <input type="number" name="valor" id="valor" step="0.01" required><br><br>
+
+    <button type="submit">Confirmar Saque</button>
+</form>
+
+{% if erro %}
+    <p style="color: red;">{{ erro }}</p>
+{% endif %}
